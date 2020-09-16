@@ -12,11 +12,12 @@ LOGGER = logging.getLogger("reflex_cli")
 class ReflexGithub:
     """Discovers rules by querying github remotes."""
 
-    def __init__(self):
-        self.github_organizations = ["reflexivesecurity"]
+    def __init__(self, github_organizations):
+        self.github_organizations = github_organizations
 
         token = os.environ.get("REFLEX_GITHUB_TOKEN")
-        self.github_client = github.Github(token)
+        self.github_client = github.Github()
+
 
     def get_repos(self):  # pragma: no cover
         """Iterates over github org and collects repos that match rules."""
