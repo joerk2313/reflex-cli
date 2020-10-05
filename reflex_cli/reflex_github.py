@@ -14,8 +14,6 @@ class ReflexGithub:
 
     def __init__(self, github_organizations):
         self.github_organizations = github_organizations
-
-        token = os.environ.get("REFLEX_GITHUB_TOKEN")
         self.github_client = github.Github()
 
 
